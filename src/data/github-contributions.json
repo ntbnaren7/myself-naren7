@@ -1,0 +1,60 @@
+{
+  "open": {
+    "total": 7,
+    "items": [
+      {
+        "title": "fix: restrict issue and label deletion to operators only",
+        "repository": "LF-Decentralized-Trust-labs/gitmesh",
+        "url": "https://github.com/LF-Decentralized-Trust-labs/gitmesh/pull/393",
+        "state": "Open"
+      },
+      {
+        "title": "docs: add macOS development guide for issue #1465",
+        "repository": "kmesh-net/kmesh",
+        "url": "https://github.com/kmesh-net/kmesh/pull/1584",
+        "state": "Open"
+      },
+      {
+        "title": "fix: log workspace create/update/delete to activity trail",
+        "repository": "LF-Decentralized-Trust-labs/gitmesh",
+        "url": "https://github.com/LF-Decentralized-Trust-labs/gitmesh/pull/392",
+        "state": "Open"
+      },
+      {
+        "title": "[DMP 2026] Intelligent CC Suggestion Tool               Complete Pipeline (Goals 1, 2 & 3)",
+        "repository": "PlanetRead/Intelligent-cc-generation",
+        "url": "https://github.com/PlanetRead/Intelligent-cc-generation/pull/8",
+        "state": "Open"
+      }
+    ]
+  },
+  "closed": {
+    "total": 88,
+    "items": [
+      {
+        "title": "Aod activity on demand",
+        "repository": "sugarlabs/sugar",
+        "url": "https://github.com/sugarlabs/sugar/pull/1107",
+        "state": "Closed"
+      },
+      {
+        "title": "fix(operator): synchronize runtime provider registries",
+        "repository": "Garudex-Labs/caracal",
+        "url": "https://github.com/Garudex-Labs/caracal/pull/426",
+        "state": "Closed"
+      },
+      {
+        "title": "fix(operator): make provider reconciliation durable",
+        "repository": "Garudex-Labs/caracal",
+        "url": "https://github.com/Garudex-Labs/caracal/pull/425",
+        "state": "Closed"
+      },
+      {
+        "title": "fix(operator): recover approved plans after credentials expire",
+        "repository": "Garudex-Labs/caracal",
+        "url": "https://github.com/Garudex-Labs/caracal/pull/423",
+        "state": "Closed"
+      }
+    ]
+  }
+}

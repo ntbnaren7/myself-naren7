@@ -1,0 +1,98 @@
+/* Effects only: sizing and spacing come from the existing .small-button. */
+.small-button.tactile-button {
+  --button-surface: #0a0a0a;
+  --button-hover-surface: #141414;
+  --button-shadow-opacity: 50%;
+  background:
+    linear-gradient(to bottom, rgb(255 255 255 / 5%), transparent),
+    var(--button-surface);
+  box-shadow:
+    inset 0 1px 1px rgb(255 255 255 / 15%),
+    0 1px 2px rgb(0 0 0 / var(--button-shadow-opacity));
+  transition:
+    background 150ms,
+    border-color 150ms,
+    box-shadow 150ms,
+    color 150ms,
+    transform 150ms;
+}
+.small-button.tactile-button:is(:hover, :focus-visible) {
+  background:
+    linear-gradient(to bottom, rgb(255 255 255 / 8%), transparent),
+    var(--button-hover-surface);
+  border-color: rgb(255 255 255 / 10%);
+  color: var(--foreground);
+  box-shadow:
+    inset 0 1px 1px rgb(255 255 255 / 20%),
+    0 2px 4px rgb(0 0 0 / var(--button-shadow-opacity));
+}
+.small-button.tactile-button:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 1px 1px rgb(255 255 255 / 10%),
+    0 1px 1px rgb(0 0 0 / var(--button-shadow-opacity));
+}
+:root[data-theme="light"] .small-button.tactile-button {
+  --button-surface: #fafafa;
+  --button-hover-surface: #f0f0f0;
+  --button-shadow-opacity: 10%;
+}
+
+.small-button.tactile-button-primary {
+  background: linear-gradient(to bottom, #fff, #f4f4f5);
+  border-color: rgb(228 228 231 / 80%);
+  color: #09090b;
+  box-shadow:
+    inset 0 -1px 1px #0000000d,
+    0 1px 2px #0000001a;
+  transition:
+    background 150ms,
+    box-shadow 150ms,
+    transform 150ms;
+}
+.small-button.tactile-button-primary:is(:hover, :focus-visible) {
+  background: linear-gradient(to bottom, #fafafa, #e4e4e7);
+  color: #09090b;
+  box-shadow:
+    inset 0 -1px 1px #0000000d,
+    0 2px 4px #0000001a;
+}
+.small-button.tactile-button-primary:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 1px 1px #0000000d,
+    0 1px 1px #0000001a;
+}
+
+/* Keep the registry effect at the current row size and inside its border. */
+.small-button.rg-button.resume-button {
+  min-width: 0;
+  min-height: 0;
+  align-self: flex-start;
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 17px;
+  background: var(--bg);
+  background-clip: padding-box;
+  isolation: isolate;
+  overflow: hidden;
+}
+.resume-button.rg-button::before,
+.resume-button .rg-shine {
+  inset: 0;
+  border-radius: 3px;
+}
+.resume-button .rg-bg {
+  inset: 1px;
+  border-radius: 2px;
+  z-index: 1;
+}
+.resume-button .rg-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+}

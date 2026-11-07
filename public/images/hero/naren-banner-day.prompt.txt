@@ -1,0 +1,11 @@
+Generated using the built-in image generation tool in edit mode.
+Edit source: public/images/hero/naren-banner.jpg
+Actual output: 1679 x 937 pixels. Web asset: JPEG, quality 92.
+
+Use case: lighting-weather.
+Asset type: daytime counterpart of an existing pixel-art portfolio banner.
+Input image: the provided original night banner is the EDIT TARGET, not merely a style reference.
+Primary request: Change ONLY the time of day and illumination of this exact image to a beautiful bright daytime version for a website's light theme. This must be recognizably the literal same scene, not a redesigned illustration.
+Preserve: exact camera framing and image aspect ratio (1376 x 768 if possible); same seated young dark-haired knight at the same position in the lower-right; identical pose, armor design, face, blue cape, helmet to his left, sword leaning on the rock to his right; same rocks, white wildflower placements, grass shapes, distant tree line, mountain silhouettes on the right, and horizon height. Keep every foreground and landscape object in its original position and proportions. Preserve the crisp detailed pixel-art rendering, visible pixel edges, and dithering.
+Change only: turn midnight sky into a soft clear pale blue daytime sky with a few delicate white pixel-art clouds, replacing the visible stars, nebula and crescent moon. Illuminate the meadow with gentle warm morning sunlight: fresh natural green grass, white flowers with subtle warm centers, pale blue atmospheric mountains, sunlight reflecting on the same steel armor. Bright airy spring daylight, balanced soft shadows; rich readable details with no blown-out whites. Keep the blue cape and all object identities.
+Constraints: no new objects, no new characters, no repositioning, no changed pose, no changes to landscape geometry, no zoom, no crop, no text, no watermark. No photorealism, smooth painted reinterpretation, or 3D rendering. This is a precise daylight relighting and sky/weather edit of the provided image.

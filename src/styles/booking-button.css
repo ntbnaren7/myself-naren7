@@ -1,0 +1,111 @@
+.booking-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  border-radius: 4px;
+  background: #3f3f46;
+  perspective: 300px;
+  user-select: none;
+  box-shadow:
+    0 -1px 2px #ffffff1a,
+    inset 0 1px 2px #0009,
+    inset 0 3px 10px #00000080;
+  transition: background 600ms cubic-bezier(0.2, 0.7, 0.1, 1.1);
+}
+.booking-size {
+  visibility: hidden;
+  pointer-events: none;
+}
+.booking-link > .booking-destination {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 600ms cubic-bezier(0.2, 0.7, 0.1, 1.1);
+}
+.booking-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: bottom;
+  transform-style: preserve-3d;
+  transition: transform 600ms cubic-bezier(0.2, 0.7, 0.1, 1.1);
+  pointer-events: none;
+}
+.booking-cover-inside,
+.booking-cover-outside {
+  position: absolute;
+  inset: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+.booking-cover-inside {
+  background: linear-gradient(transparent, #0000004d), #18181b;
+  color: #fff;
+  text-shadow: 0 -1px 2px #0006;
+  transition: background-color 600ms cubic-bezier(0.2, 0.7, 0.1, 1.1);
+}
+.booking-cover-outside {
+  transform: translateZ(0.15rem);
+}
+.booking-cover-spine {
+  position: absolute;
+  top: 0.15rem;
+  left: 0;
+  width: 100%;
+  height: 0.15rem;
+  background: #27272a;
+  transform-origin: top;
+  transform: rotateX(90deg);
+  transition: background-color 600ms cubic-bezier(0.2, 0.7, 0.1, 1.1);
+}
+.booking-cover-shadow {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 2.2rem;
+  border-radius: 4px;
+  background: linear-gradient(#0009, transparent);
+  transform-origin: top;
+  transform: rotateX(90deg);
+  opacity: 0;
+  transition:
+    transform 600ms cubic-bezier(0.2, 0.7, 0.1, 1.1),
+    opacity 600ms;
+  pointer-events: none;
+}
+.booking-link:is(:hover, :focus-visible) {
+  z-index: 20;
+  background: #52525b;
+}
+.booking-link:is(:hover, :focus-visible) .booking-destination {
+  opacity: 1;
+}
+.booking-link:is(:hover, :focus-visible) .booking-cover {
+  transform: rotateX(-120deg);
+}
+.booking-link:is(:hover, :focus-visible) .booking-cover-inside {
+  background-color: #27272a;
+}
+.booking-link:is(:hover, :focus-visible) .booking-cover-spine {
+  background-color: #3f3f46;
+}
+.booking-link:is(:hover, :focus-visible) .booking-cover-shadow {
+  opacity: 1;
+  transform: rotateX(45deg) scale(0.95);
+}

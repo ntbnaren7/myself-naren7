@@ -1,0 +1,444 @@
+{
+  "experiences": [
+    {
+      "id": "1",
+      "title": "Linux Foundation AI Security Mentorship",
+      "role": "AI Security Intern, Caracal",
+      "date": "Jun 2026 - Present",
+      "location": "Remote",
+      "image": "/images/experience/linux-foundation.png",
+      "stats": [
+        {
+          "value": "5",
+          "label": "Core Components"
+        },
+        {
+          "value": "3",
+          "label": "Principals"
+        },
+        {
+          "value": "Jun-Nov",
+          "label": "Term"
+        },
+        {
+          "value": "Ledger",
+          "label": "Audit Trail"
+        }
+      ],
+      "description": [
+        "Building Caracal, an AI-agent security platform that enforces pre-execution authority checks before humans, agents, or services can trigger delegated actions",
+        "Designing policy-driven AI execution controls for request routing, approval gates, revocation checks, and common human-to-agent and agent-to-service workflows",
+        "Modeling delegation graphs that evaluate long and deep authority chains, resolve valid permission paths, and block unauthorized agent actions before execution",
+        "Integrating a secret vault layer so AI agents can use API keys and service credentials through policy-approved access without exposing raw secrets",
+        "Recording tamper-evident audit records and immutable proofs to a ledger-backed adapter for compliance, traceability, and AI-action accountability",
+        "Extending the platform toward agent policy negotiation, security reasoning modules, decentralized identity, verifiable credentials, and audit-derived policy recommendations"
+      ],
+      "tags": [
+        "AI Security",
+        "AI Agents",
+        "Policy Engines",
+        "Delegation Graphs",
+        "Secret Vaults",
+        "DLT",
+        "Audit Logs",
+        "DID/VC",
+        "Agent Security"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Google Summer of Code 2026",
+      "role": "AI Intern, Sugar Labs",
+      "date": "May 2026 - August 2026",
+      "location": "Remote",
+      "image": "/images/experience/google-summer-of-code.png",
+      "stats": [
+        {
+          "value": "3",
+          "label": "Learning Modes"
+        },
+        {
+          "value": "5",
+          "label": "Architecture Layers"
+        },
+        {
+          "value": "14+",
+          "label": "Modules"
+        },
+        {
+          "value": "16+",
+          "label": "RAG Docs"
+        }
+      ],
+      "description": [
+        "Building Activity On Demand, a constructionist AI workflow that helps learners create, inspect, modify, and remix real Sugar activities instead of passively receiving generated code",
+        "Designing a GTK3 experience launched from Sugar's Home View with prompt ideation, template selection, provider policy, generation progress, and Use - Modify - Create learning modes",
+        "Implementing the core Python architecture across ActivitySpec, template inference, RAG-grounded planning, Gemini/local provider flows, SQLite job history, session revisions, provenance, and validation",
+        "Developing a guided Studio with file tree navigation, annotated source viewing, AST-based code explanations, editable-region challenges, live validation, version diffs, and reflection prompts",
+        "Building classroom-ready safeguards with provider profiles, teacher-controlled settings, API-key storage, forbidden import/call validation, template fallback, and retry-on-validation loops",
+        "Supporting the Sugar Labs community by reviewing contributor pull requests, onboarding new developers, discussing issues, and helping applicants clarify GSoC proposal problem statements"
+      ],
+      "tags": [
+        "Python",
+        "GTK3",
+        "Sugar",
+        "Gemini API",
+        "SQLite",
+        "AST",
+        "RAG",
+        "LLM Safety"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Vercel OSS Program",
+      "role": "Founder & Maintainer",
+      "date": "Oct 2025 - Present",
+      "location": "Remote",
+      "image": "/images/experience/vercel.png",
+      "stats": [
+        {
+          "value": "683",
+          "label": "GitHub Stars"
+        },
+        {
+          "value": "30,000 - 40,000",
+          "label": "Monthly Visitors"
+        },
+        {
+          "value": "120,000 - 200,000",
+          "label": "Monthly Page Views"
+        },
+        {
+          "value": "50+",
+          "label": "V2 Components"
+        }
+      ],
+      "description": [
+        "Selection : VengenceUI was chosen for Vercel's Winter 2026 Open Source Program in March 2026 as a composable, performance-first UI system for real-world product workflows",
+        "VengenceUI v1 : Founded the open-source animated component library in October 2025 and grew it to 683 GitHub stars, 40 forks, and a 10-contributor community",
+        "Monthly traction : Grew from 30,000 to 40,000 monthly visitors and from 120,000 to 200,000 monthly page views while maintaining a 34% bounce rate",
+        "VengenceUI v2 : Rebuilt the product from the ground up with 50+ production-ready components, stronger visual consistency, improved documentation, and a faster component-discovery experience",
+        "Developer experience : Designed copy-paste installation flows, reusable registry components, interactive previews, responsive documentation, and clearer integration guidance",
+        "Engineering : Led architecture, design systems, component APIs, animation quality, performance optimization, accessibility, deployment, analytics, and community contributions across both versions"
+      ],
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "MDX",
+        "Vercel"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Open Source Contributor",
+      "role": "Sugar Labs, Joplin, kgateway & more",
+      "date": "Sep 2025 - Apr 2026",
+      "location": "Remote",
+      "image": "/images/experience/github.png",
+      "stats": [
+        {
+          "value": "10",
+          "label": "Repositories"
+        },
+        {
+          "value": "112",
+          "label": "Pull Requests"
+        },
+        {
+          "value": "72",
+          "label": "Merged"
+        },
+        {
+          "value": "8",
+          "label": "Still Open"
+        }
+      ],
+      "description": [
+        "Sugar Labs : Delivered 82 pull requests across Music Blocks, Music Blocks V4, and www-v2, covering performance, reliability, testing, accessibility, CI, and developer tooling",
+        "Sugar Labs : Reduced memory usage by 70-120 MB through lazy bitmap caching and by 50-115 MB by fixing leaked Tone.js synthesizers",
+        "Sugar Labs : Improved canvas rendering, block interactions, audio loading, retry and timer handling, crash recovery, Lighthouse CI, PR automation, and unit-test coverage",
+        "Joplin : Authored 18 pull requests with 11 merged across desktop and mobile, improving global shortcuts, E2EE, plugins, sync, exports, editors, localization, updates, and rendering",
+        "Joplin : Prevented failing plugins from blocking startup, removed JSDOM from the Turndown renderer, reused the master-password flow for E2EE, fixed duplicate code blocks and Ctrl+wheel zoom, and enriched frontmatter exports",
+        "Kmesh : Authored a macOS development guide to make local setup and contributor onboarding clearer",
+        "Additional work : Improved kgateway migration documentation and HTTPS security, alongside contributions to FOSSology , FOSSASIA Eventyay , Extralit , and React JSON Schema Form covering scheduler stability, SPDX compliance, authentication flows, and React 19 compatibility"
+      ],
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Electron",
+        "Python",
+        "C",
+        "Vue",
+        "GitHub Actions"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Google Summer Of Code",
+      "role": "Open Source Contributor",
+      "date": "May 2025 - August 2025",
+      "location": "Remote",
+      "image": "/images/experience/google-summer-of-code.png",
+      "stats": [],
+      "description": [
+        "Built scalable solutions for open source organizations",
+        "Received mentorship from top engineers and industry experts",
+        "Contributed real-world features that impacted thousands of users",
+        "Optimized codebase performance and reduced technical debt significantly"
+      ],
+      "tags": ["Next.js", "TypeScript", "React", "Node.js"]
+    },
+    {
+      "id": "6",
+      "title": "C4GT",
+      "role": "Open Source Contributor",
+      "date": "May 2025 - August 2025",
+      "location": "Remote",
+      "image": "/images/experience/c4gt.png",
+      "stats": [],
+      "description": [
+        "Developed innovative tools solving real developer problems",
+        "Shipped production features with 10k+ downloads",
+        "Collaborated with open source maintainers and communities",
+        "Authored technical documentation to streamline developer onboarding"
+      ],
+      "tags": ["Prisma", "Cloudflare", "LangChain", "TypeScript"]
+    },
+    {
+      "id": "7",
+      "title": "Open Source Contributor",
+      "role": "Full Stack Developer",
+      "date": "December 2024 - April 2025",
+      "location": "Remote",
+      "image": "/images/experience/github.png",
+      "stats": [],
+      "description": [
+        "Mastered React, Node.js, databases, and deployment technologies",
+        "Contributed to multiple popular open source projects",
+        "Built strong foundation in full-stack development practices",
+        "Participated in code reviews and community discussions actively"
+      ],
+      "tags": ["React", "Node.js", "TypeScript"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "React",
+      "icon": "react"
+    },
+    {
+      "name": "Next",
+      "icon": "next"
+    },
+    {
+      "name": "Expo",
+      "icon": "expo"
+    },
+    {
+      "name": "Django",
+      "icon": "django"
+    },
+    {
+      "name": "Express",
+      "icon": "express"
+    },
+    {
+      "name": "Node",
+      "icon": "node"
+    },
+    {
+      "name": "Bun",
+      "icon": "bun"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "postgresql"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "mongodb"
+    },
+    {
+      "name": "Redis",
+      "icon": "redis"
+    },
+    {
+      "name": "Prisma",
+      "icon": "prisma"
+    },
+    {
+      "name": "Zustand",
+      "icon": "zustand"
+    },
+    {
+      "name": "Tanstack Query",
+      "icon": "tanstack-query"
+    },
+    {
+      "name": "Postman",
+      "icon": "postman"
+    },
+    {
+      "name": "Tailwind",
+      "icon": "tailwind"
+    },
+    {
+      "name": "shadcn",
+      "icon": "shadcn"
+    },
+    {
+      "name": "Motion",
+      "icon": "motion"
+    },
+    {
+      "name": "GSAP",
+      "icon": "gsap"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "javascript"
+    },
+    {
+      "name": "TypeScript",
+      "icon": "typescript"
+    },
+    {
+      "name": "Python",
+      "icon": "python"
+    },
+    {
+      "name": "C/C++",
+      "icon": "c-c"
+    },
+    {
+      "name": "SQL",
+      "icon": "sql"
+    },
+    {
+      "name": "Git",
+      "icon": "git"
+    },
+    {
+      "name": "Github",
+      "icon": "github"
+    },
+    {
+      "name": "Figma",
+      "icon": "figma"
+    },
+    {
+      "name": "Docker",
+      "icon": "docker"
+    },
+    {
+      "name": "Linux",
+      "icon": "linux"
+    }
+  ],
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/Ashutoshx7?tab=overview&from=2026-05-01&to=2026-05-15",
+      "icon": "github"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://x.com/Ashutosh_7x7",
+      "icon": "twitter"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/ashutosh-singh-855177329/",
+      "icon": "linkedin"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.com/users/1137614232167399474",
+      "icon": "discord"
+    }
+  ],
+  "blogs": [
+    {
+      "title": "How I Cracked GSoC 2026 with Sugar Labs",
+      "url": "https://www.ashutoshx7.me/blogs/gsoc-2026-sugar-labs-journey",
+      "date": "Oct 2026",
+      "tags": ["GSoC", "Open Source", "Sugar Labs"]
+    },
+    {
+      "title": "You Are Not Ready for Open Source Just Because You Want to Start",
+      "url": "https://www.ashutoshx7.me/blogs/ready-for-open-source",
+      "date": "Jul 2026",
+      "tags": ["Open Source", "AI", "Learning"]
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Completed Google Summer of Code 2026 with Sugar Labs",
+      "image": "/images/highlights/gsoc-2026-certificate.png",
+      "label": "GSoC 2026",
+      "width": 255,
+      "url": ""
+    },
+    {
+      "title": "VengenceUI accepted into Sentry's Sponsored Account Program",
+      "image": "/images/highlights/sentry-sponsored-account.png",
+      "label": "Sentry",
+      "width": 200,
+      "url": ""
+    },
+    {
+      "title": "Accepted into the Claude for Open Source Program",
+      "image": "/images/highlights/claude-open-source.png",
+      "label": "Claude OSS",
+      "width": 208,
+      "url": ""
+    },
+    {
+      "title": "Selected as a Caracal Mentee for LFX Mentorship 2026",
+      "image": "/images/highlights/lf-mentorship.png",
+      "label": "LFX 2026",
+      "width": 200,
+      "url": ""
+    },
+    {
+      "title": "VengenceUI accepted into the Sarvam Startup Program",
+      "image": "/images/highlights/sarvam-startup-program.png",
+      "label": "Sarvam AI",
+      "width": 334,
+      "url": ""
+    },
+    {
+      "title": "Selected for Google Summer of Code 2025",
+      "image": "/images/highlights/gsoc-selection.png",
+      "label": "GSoC 2025",
+      "width": 300,
+      "url": ""
+    },
+    {
+      "title": "Accepted into Vercel Open Source Program",
+      "image": "/images/highlights/vercel-oss.png",
+      "label": "Vercel OSS",
+      "width": 300,
+      "url": ""
+    },
+    {
+      "title": "Accepted into Linux Foundation Mentorship Program",
+      "image": "/images/highlights/lf-mentorship.png",
+      "label": "LFX Mentorship",
+      "width": 300,
+      "url": ""
+    },
+    {
+      "title": "Featured on Harkirat Singh's Podcast",
+      "image": "/images/highlights/podcast-harkirat.png",
+      "label": "Podcast",
+      "width": 300,
+      "url": ""
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+
+# Local environment and credentials
+.env*
+!.env.example
+*.local
+*.secret
+*.secrets
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+credentials*.json
+secrets*.json
+
+# Local tooling and editor state
+.vscode/
+.idea/
+.cursor/
+.claude/
+.agents/
+.codex/
+*.swp
+*.swo
+
+# Logs, coverage, caches, and local reports
+*.log
+coverage/
+.nyc_output/
+.cache/
+.vite/
+tmp/
+temp/
+
+# Source assets kept as local staging inputs; published copies live in public/
+assets-to-use/

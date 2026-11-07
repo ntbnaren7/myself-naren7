@@ -1,0 +1,32 @@
+/* Keep the portfolio's reset; load Tailwind's theme and utility layers only. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "tw-animate-css";
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--foreground);
+  --color-primary: var(--foreground);
+  --color-primary-foreground: var(--background);
+  --color-secondary: var(--selected);
+  --color-secondary-foreground: var(--foreground);
+  --color-muted: var(--selected);
+  --color-muted-foreground: var(--muted);
+  --color-accent: var(--surface-hover);
+  --color-accent-foreground: var(--foreground);
+  --color-destructive: #ef4444;
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--muted);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+}

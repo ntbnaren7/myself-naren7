@@ -1,0 +1,284 @@
+/* Design adapted from Ashutoshx7/Portfolio-v2-:
+   src/components/pixel-perfect/social-hover-card.tsx */
+.social-link-group {
+  position: relative;
+  display: inline-flex;
+}
+.social-link-group[data-open="true"] {
+  z-index: 30;
+}
+.social-card-positioner {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 30;
+  width: 250px;
+  max-width: calc(100vw - 32px);
+  padding-top: 8px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-50%, 4px) scale(0.985);
+  pointer-events: none;
+  transition:
+    opacity 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 220ms;
+}
+.social-card-positioner[data-side="top"] {
+  top: auto;
+  bottom: 100%;
+  padding-top: 0;
+  padding-bottom: 8px;
+}
+.social-link-group[data-open="true"] .social-card-positioner {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+  pointer-events: auto;
+}
+.social-hover-card {
+  --card-surface: rgb(12 12 14 / 95%);
+  --card-foreground: #fafafa;
+  --card-muted: #71717a;
+  --card-bio: #d4d4d8;
+  --card-border: rgb(255 255 255 / 5%);
+  --avatar-border: rgb(255 255 255 / 10%);
+  --avatar-ring: #0c0c0e;
+  --avatar-blend: normal;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: var(--card-surface);
+  color: var(--card-foreground);
+  box-shadow: 0 25px 50px -12px #0004;
+  backdrop-filter: blur(12px);
+  text-align: left;
+  font-weight: 400;
+  line-height: 1.5;
+  user-select: none;
+}
+:root[data-theme="light"] .social-hover-card {
+  --card-surface: rgb(255 255 255 / 95%);
+  --card-foreground: #09090b;
+  --card-muted: #a1a1aa;
+  --card-bio: #27272a;
+  --card-border: rgb(0 0 0 / 5%);
+  --avatar-border: rgb(0 0 0 / 5%);
+  --avatar-ring: #fff;
+  --avatar-blend: multiply;
+}
+.social-card-body {
+  position: relative;
+  padding: 16px;
+}
+.social-card-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.social-card-identity img {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--avatar-border);
+  object-fit: cover;
+  filter: grayscale(1);
+  opacity: 0.9;
+  mix-blend-mode: var(--avatar-blend);
+}
+.social-card-identity > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.social-card-identity strong {
+  overflow: hidden;
+  color: var(--card-foreground);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.social-card-identity span {
+  margin-top: 2px;
+  color: var(--card-muted);
+  font-family: "Geist Mono", monospace;
+  font-size: 11.5px;
+  line-height: 1;
+}
+.social-card-bio {
+  margin-top: 12px;
+  color: var(--card-bio);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.625;
+}
+.social-card-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  color: var(--card-muted);
+  font-size: 10.5px;
+}
+.social-card-location svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  stroke-width: 2.5;
+}
+.social-card-stats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 14px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--card-border);
+  color: var(--card-muted);
+  font-size: 12px;
+}
+.social-card-stats > div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.social-card-stats dt {
+  order: 1;
+}
+.social-card-stats dd {
+  margin: 0;
+  color: var(--card-foreground);
+  font-weight: 800;
+}
+.social-card-discord .discord-avatar {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  margin: 0;
+}
+.social-card-discord .social-card-identity span {
+  font-family: inherit;
+}
+.discord-avatar-status {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--avatar-ring);
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 1px 2px #0000000d;
+}
+.discord-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--card-border);
+}
+.discord-status-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--card-bio);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+.discord-status-label i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: discord-status-pulse 2s ease-in-out infinite;
+}
+.discord-status-caption {
+  color: var(--card-muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+@keyframes discord-status-pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+.social-card-banner {
+  height: 64px;
+  overflow: hidden;
+  background: #071329;
+}
+.social-card-banner > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.social-card-banner > .social-card-banner-day {
+  display: none;
+}
+:root[data-theme="light"] .social-card-banner-day {
+  display: block;
+}
+:root[data-theme="light"] .social-card-banner-night {
+  display: none;
+}
+.social-card-twitter .social-card-body,
+.social-card-linkedin .social-card-body {
+  padding: 0 14px 14px;
+}
+.social-card-twitter .social-card-identity,
+.social-card-linkedin .social-card-identity {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 14px;
+}
+.social-card-twitter .social-card-identity img,
+.social-card-linkedin .social-card-identity img {
+  width: 56px;
+  height: 56px;
+  margin-top: -28px;
+  border: 2px solid var(--avatar-ring);
+  box-shadow: 0 1px 2px #0000000d;
+}
+.social-card-twitter .social-card-identity strong,
+.social-card-linkedin .social-card-identity strong {
+  font-weight: 800;
+  line-height: 1;
+}
+.social-card-twitter .social-card-identity span,
+.social-card-linkedin .social-card-identity span {
+  font-size: 10.5px;
+}
+.social-card-twitter .social-card-bio,
+.social-card-linkedin .social-card-bio {
+  margin-top: 10px;
+  line-height: 16px;
+}
+.social-card-twitter .social-card-location,
+.social-card-linkedin .social-card-location {
+  gap: 4px;
+  margin-top: 8px;
+}
+.social-card-twitter .social-card-location svg,
+.social-card-linkedin .social-card-location svg {
+  width: 10px;
+  height: 10px;
+}
+.social-card-twitter .social-card-stats,
+.social-card-linkedin .social-card-stats {
+  gap: 16px;
+  padding-top: 10px;
+  font-size: 11.5px;
+}
+@media (max-width: 639px) {
+  .social-card-positioner {
+    width: 230px;
+  }
+}
