@@ -16,8 +16,8 @@ export const profile = {
   githubUrl: "https://github.com/ntbnaren7",
   blogUrl: "https://medium.com/@ashutoshx7",
   quote:
-    "Do so much work that it would be unreasonable for you to not be successful.",
-  quoteAuthor: "Alex Hormozi",
+    "By believing passionately in something that still does not exist, we create it. The non-existent is whatever we have not sufficiently desired",
+  quoteAuthor: "Franz Kafka",
 };
 
 export const sections = [

@@ -12,6 +12,7 @@ import { ProjectsSection } from "./components/sections/ProjectsSection";
 import { SkillsSection } from "./components/sections/SkillsSection";
 import { profile } from "./data/portfolio";
 import { ResumeDialog } from "./components/ResumeDialog";
+import { Icon } from "./components/ui/Icon";
 import {
   getVisibleSurveyPoints,
   ThemeSurveyPoints,
@@ -121,7 +122,17 @@ export function App() {
               <span />
             </p>
           </div>
-          <div className="footer-dots" aria-hidden="true" />
+          <div className="footer-dots">
+            <a
+              className="design-credit"
+              href="https://www.ashutoshx7.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Design by ashutoshx7
+              <Icon name="arrow-up-right" size={13} />
+            </a>
+          </div>
         </footer>
       </main>
       <ThemeSurveyPoints points={surveyPoints} />
