@@ -73,6 +73,8 @@ export function CommandMenu({
         .querySelector(command.href)
         ?.scrollIntoView({ behavior: "smooth" });
       history.replaceState(null, "", command.href);
+    } else if (command.href.startsWith("mailto:")) {
+      window.location.href = command.href;
     } else window.open(command.href, "_blank", "noopener,noreferrer");
     onClose();
   };

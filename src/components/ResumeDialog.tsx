@@ -50,19 +50,16 @@ export function ResumeDialog({
             hidden
             aria-hidden="true"
           />
-          {open && (
-            <LiquidMetalButton
-              type="button"
-              className="resume-download"
-              size="sm"
-              borderWidth={1}
-              icon={<Download size={14} aria-hidden="true" />}
-              metalConfig={{ speed: reducedMotion ? 0 : 0.4 }}
-              onClick={() => downloadLink.current?.click()}
-            >
-              Download PDF
-            </LiquidMetalButton>
-          )}
+          <LiquidMetalButton
+            type="button"
+            size="sm"
+            className="resume-download"
+            icon={<Download size={17} strokeWidth={2.25} aria-hidden="true" />}
+            metalConfig={{ speed: open && !reducedMotion ? 0.4 : 0 }}
+            onClick={() => downloadLink.current?.click()}
+          >
+            Download PDF
+          </LiquidMetalButton>
           <button
             type="button"
             className="resume-close"

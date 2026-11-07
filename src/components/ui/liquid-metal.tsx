@@ -100,27 +100,28 @@ export const LiquidMetalButton = forwardRef<
       md: "py-3 pl-3 pr-8 gap-4 text-base",
       lg: "py-4 pl-4 pr-10 gap-6 text-lg",
     };
-
-    const iconSizes = {
-      sm: "w-8 h-8",
-      md: "w-10 h-10",
-      lg: "w-12 h-12",
-    };
+    const iconSizes = { sm: "size-7", md: "size-9", lg: "size-11" };
 
     return (
       <button
         ref={ref}
         disabled={disabled}
         className={cn(
-          "relative group cursor-pointer border-none bg-transparent p-0 outline-none transition-transform active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none",
+          "relative isolate inline-flex items-center rounded-[13px] border-none bg-black hover:bg-[#171717] text-white cursor-pointer outline-none transition-[background-color,transform] duration-200 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none",
+          sizeStyles[size],
           className,
         )}
         {...props}
       >
-        <div
+        <span
           data-slot="liquid-metal-frame"
-          className="relative rounded-full overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)]"
-          style={{ padding: borderWidth }}
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]"
+          style={{
+            padding: borderWidth,
+            mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+            maskComposite: "exclude",
+          }}
         >
           {/* Liquid Metal Border Layer */}
           <LiquidMetal
@@ -130,40 +131,21 @@ export const LiquidMetalButton = forwardRef<
             repetition={metalConfig?.repetition ?? 4}
             distortion={metalConfig?.distortion ?? 0.15}
             scale={metalConfig?.scale ?? 1}
-            className="absolute inset-0 z-0 rounded-full"
+            className="absolute inset-0 z-0"
           />
-
-          {/* Inner Button Body */}
-          <div
-            data-slot="liquid-metal-body"
+        </span>
+        {icon && (
+          <span
             className={cn(
-              "relative z-10 rounded-full flex items-center",
-              "bg-white dark:bg-black",
-              "transition-colors duration-200",
-              "group-hover:bg-neutral-50 dark:group-hover:bg-neutral-900",
-              sizeStyles[size],
+              "relative flex shrink-0 items-center justify-center rounded-[9px] bg-[#262626] text-neutral-300",
+              iconSizes[size],
             )}
+            aria-hidden="true"
           >
-            {icon && (
-              <div
-                data-slot="liquid-metal-icon"
-                className={cn(
-                  "rounded-full flex items-center justify-center",
-                  "bg-neutral-100 dark:bg-neutral-800",
-                  "shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)]",
-                  iconSizes[size],
-                )}
-              >
-                <span className="text-neutral-700 dark:text-neutral-300">
-                  {icon}
-                </span>
-              </div>
-            )}
-            <span className="font-medium tracking-tight text-neutral-900 dark:text-white">
-              {children}
-            </span>
-          </div>
-        </div>
+            {icon}
+          </span>
+        )}
+        <span className="relative font-medium tracking-tight">{children}</span>
       </button>
     );
   },

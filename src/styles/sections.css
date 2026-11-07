@@ -218,7 +218,7 @@
   background: var(--surface);
   box-shadow: 0 -8px 30px #0008;
   transform-origin: bottom;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .project-screen img {
   width: 100%;
@@ -226,19 +226,29 @@
   object-fit: cover;
   object-position: top;
 }
-.project-pin {
+.project-direct-link {
   position: absolute;
-  right: 16px;
-  top: 16px;
+  right: 12px;
+  top: 12px;
   z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--subtle);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  color: var(--muted);
+  backdrop-filter: blur(8px);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+.project-preview:hover .project-direct-link,
+.project-preview:focus-visible .project-direct-link {
+  color: var(--foreground);
+  transform: translate(1px, -1px);
 }
 .project-hover-image {
   position: absolute;
@@ -272,11 +282,10 @@
 .project-preview:hover .project-hover-image,
 .project-preview:focus-visible .project-hover-image {
   opacity: 1;
-  transform: scale(1.03);
 }
 .project-preview:hover .project-screen,
 .project-preview:focus-visible .project-screen {
-  transform: translateY(45%) rotate(-4deg);
+  transform: translateY(2%) scale(0.92);
 }
 .project-preview:hover .project-hover-label,
 .project-preview:focus-visible .project-hover-label {

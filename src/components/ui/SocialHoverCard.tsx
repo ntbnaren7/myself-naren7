@@ -147,7 +147,30 @@ export function SocialHoverCard({ social }: { social: SocialProfile }) {
                 avatar
               )}
               <div>
-                <strong>{social.displayName ?? socialOwner.name}</strong>
+                <strong>
+                  {social.displayName ?? socialOwner.name}
+                  {social.variant === "twitter" && (
+                    <svg
+                      className="twitter-verified-badge"
+                      viewBox="0 0 24 24"
+                      role="img"
+                      aria-label="Verified"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="m12 1.4 2.5 1.2 2.8-.1 1.3 2.5 2.5 1.3-.1 2.8 1.2 2.5-1.2 2.5.1 2.8-2.5 1.3-1.3 2.5-2.8-.1-2.5 1.2-2.5-1.2-2.8.1-1.3-2.5-2.5-1.3.1-2.8L1.8 12l1.2-2.5-.1-2.8 2.5-1.3 1.3-2.5 2.8.1L12 1.4Z"
+                      />
+                      <path
+                        d="m7.7 12.2 2.8 2.7 5.8-6"
+                        fill="none"
+                        stroke="white"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2.2"
+                      />
+                    </svg>
+                  )}
+                </strong>
                 <span>{social.handle}</span>
                 {social.pronouns && !discord && <span>{social.pronouns}</span>}
               </div>

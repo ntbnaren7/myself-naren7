@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import { CommandMenu } from "./components/CommandMenu";
 import { SectionIndex } from "./components/SectionIndex";
 import { BlogSection } from "./components/sections/BlogSection";
@@ -11,10 +12,17 @@ import { ProjectsSection } from "./components/sections/ProjectsSection";
 import { SkillsSection } from "./components/sections/SkillsSection";
 import { profile } from "./data/portfolio";
 import { ResumeDialog } from "./components/ResumeDialog";
+import {
+  getVisibleSurveyPoints,
+  ThemeSurveyPoints,
+  type SurveyPoint,
+} from "./components/ui/ThemeSurveyPoints";
 
 export function App() {
   const [commandsOpen, setCommandsOpen] = useState(false);
   const [resumeOpen, setResumeOpen] = useState(false);
+  const [surveyPoints, setSurveyPoints] = useState<SurveyPoint[]>([]);
+  const surveyTimer = useRef<number | undefined>(undefined);
   const [light, setLight] = useState(() => {
     try {
       return localStorage.getItem("portfolio-theme") === "light";
@@ -22,7 +30,45 @@ export function App() {
       return false;
     }
   });
-  const toggleTheme = () => setLight((value) => !value);
+  const toggleTheme = () => {
+    if (surveyTimer.current !== undefined) return;
+
+    const nextLight = !light;
+    const theme = nextLight ? "light" : "dark";
+    const updateTheme = () => {
+      document.documentElement.dataset.theme = theme;
+      flushSync(() => setLight(nextLight));
+    };
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.dataset.theme = theme;
+      setLight(nextLight);
+      return;
+    }
+
+    const settleTheme = () => {
+      document.documentElement.classList.add("theme-settling");
+      updateTheme();
+      surveyTimer.current = window.setTimeout(() => {
+        document.documentElement.classList.remove("theme-settling");
+        surveyTimer.current = undefined;
+      }, 550);
+    };
+    const points = getVisibleSurveyPoints();
+    if (points.length === 0) {
+      settleTheme();
+      return;
+    }
+
+    setSurveyPoints(points);
+    surveyTimer.current = window.setTimeout(() => {
+      flushSync(() => setSurveyPoints([]));
+      settleTheme();
+    }, 600);
+  };
+  useEffect(() => () => {
+    window.clearTimeout(surveyTimer.current);
+    document.documentElement.classList.remove("theme-settling");
+  }, []);
   useEffect(() => {
     const theme = light ? "light" : "dark";
     document.documentElement.dataset.theme = theme;
@@ -78,6 +124,7 @@ export function App() {
           <div className="footer-dots" aria-hidden="true" />
         </footer>
       </main>
+      <ThemeSurveyPoints points={surveyPoints} />
       <CommandMenu
         open={commandsOpen}
         onClose={() => setCommandsOpen(false)}

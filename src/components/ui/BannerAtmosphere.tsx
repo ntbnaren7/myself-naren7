@@ -19,6 +19,7 @@ export function BannerAtmosphere({ light }: { light: boolean }) {
     let frame = 0;
     let previousTime = 0;
     let elapsed = 0;
+    let daylight = lightRef.current ? 1 : 0;
     let nightTime = 0;
     let visible = true;
     const random = (min: number, max: number) =>
@@ -60,9 +61,22 @@ export function BannerAtmosphere({ light }: { light: boolean }) {
       previousTime = now;
       elapsed += dt;
       const day = lightRef.current;
+      daylight += Math.sign((day ? 1 : 0) - daylight) * Math.min(
+        dt / 0.52,
+        Math.abs((day ? 1 : 0) - daylight),
+      );
+      const tint = (night: number[], daytime: number[]) =>
+        `rgb(${night.map((channel, index) => Math.round(channel + (daytime[index] - channel) * daylight)).join(" ")})`;
+      const nightColors = [[147, 178, 197], [232, 243, 249], [185, 213, 226]];
+      const petalColors = [[227, 216, 183], [255, 251, 234], [244, 233, 203]];
+      const leafColors = [[163, 185, 110], [224, 233, 180], [186, 205, 139]];
+      const colors = {
+        petal: nightColors.map((color, index) => tint(color, petalColors[index])),
+        leaf: nightColors.map((color, index) => tint(color, leafColors[index])),
+      };
       context!.clearRect(0, 0, width, height);
 
-      if (!day) nightTime += dt;
+      if (daylight < 1) nightTime += dt;
       if (nightTime > star.start + star.duration) {
         star.x = random(0.06, 0.62);
         star.y = random(0.03, 0.16);
@@ -71,14 +85,14 @@ export function BannerAtmosphere({ light }: { light: boolean }) {
         star.duration = random(1.4, 2.2);
       }
       // One brief glint at a time, with long random gaps and no daytime glow.
-      if (!day && nightTime >= star.start) {
+      if (daylight < 1 && nightTime >= star.start) {
         const progress = (nightTime - star.start) / star.duration;
         const pulse = Math.sin(progress * Math.PI) ** 2;
         const x = star.x * width;
         const y = star.y * height;
         const radius = star.size * (1 + pulse * 1.8);
         context!.save();
-        context!.globalAlpha = pulse * 0.65;
+        context!.globalAlpha = pulse * 0.65 * (1 - daylight);
         const halo = context!.createRadialGradient(x, y, 0, x, y, radius * 3);
         halo.addColorStop(0, "#e4f5ff");
         halo.addColorStop(1, "#b9e5ff00");
@@ -134,18 +148,10 @@ export function BannerAtmosphere({ light }: { light: boolean }) {
           petal.size,
           0,
         );
-        surface.addColorStop(
-          0,
-          day ? (petal.leaf ? "#a3b96e" : "#e3d8b7") : "#93b2c5",
-        );
-        surface.addColorStop(
-          0.5,
-          day ? (petal.leaf ? "#e0e9b4" : "#fffbea") : "#e8f3f9",
-        );
-        surface.addColorStop(
-          1,
-          day ? (petal.leaf ? "#bacd8b" : "#f4e9cb") : "#b9d5e2",
-        );
+        const palette = petal.leaf ? colors.leaf : colors.petal;
+        surface.addColorStop(0, palette[0]);
+        surface.addColorStop(0.5, palette[1]);
+        surface.addColorStop(1, palette[2]);
         context!.fillStyle = surface;
         context!.beginPath();
         context!.moveTo(0, -petal.size);

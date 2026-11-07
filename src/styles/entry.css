@@ -1,0 +1,97 @@
+@media (prefers-reduced-motion: no-preference) {
+  :root.theme-settling,
+  :root.theme-settling *,
+  :root.theme-settling *::before,
+  :root.theme-settling *::after {
+    transition:
+      color 350ms ease,
+      background-color 350ms ease,
+      border-color 350ms ease,
+      box-shadow 350ms ease,
+      opacity 520ms ease;
+  }
+
+  .portfolio-column::before,
+  .portfolio-column::after {
+    animation: survey-rail 0.65s ease-out both;
+  }
+
+  .profile-header::before {
+    animation: survey-rule 0.42s ease-out 0.2s both;
+  }
+
+  .profile-header::after {
+    animation: survey-rule 0.42s ease-out 0.35s both;
+  }
+
+  .hero-banner,
+  .profile-header > *,
+  .introduction,
+  .section-index,
+  .portfolio-column > .portfolio-section,
+  .portfolio-column > footer {
+    animation: content-arrive 0.24s ease-out 0.78s both;
+  }
+}
+
+.theme-survey-points {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.theme-survey-points span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #b9dbff;
+  box-shadow: 0 0 9px 3px rgb(139 201 255 / 55%);
+  animation: survey-point-glow 360ms ease-out both;
+}
+
+@keyframes survey-point-glow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+  40% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+
+@keyframes survey-rail {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  99% {
+    clip-path: inset(0 0 calc(100% - 100vh) 0);
+  }
+  to {
+    clip-path: none;
+  }
+}
+
+@keyframes survey-rule {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+
+@keyframes content-arrive {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

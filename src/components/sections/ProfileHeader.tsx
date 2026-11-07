@@ -29,15 +29,19 @@ export function ProfileHeader({
     <>
       <div className="hero-banner">
         <img
-          src={
-            light
-              ? "/images/hero/naren-banner-day.jpg"
-              : "/images/hero/naren-banner.jpg"
-          }
-          alt={`A pixel-art knight resting in a flower meadow beneath ${light ? "a sunny blue sky" : "a starry night sky"}`}
-          width={light ? 1679 : 1376}
-          height={light ? 937 : 768}
+          src="/images/hero/naren-banner.jpg"
+          alt="A pixel-art knight resting in a flower meadow"
+          width={1376}
+          height={768}
           fetchPriority="high"
+        />
+        <img
+          className="hero-banner-day"
+          src="/images/hero/naren-banner-day.jpg"
+          alt=""
+          aria-hidden="true"
+          width={1679}
+          height={937}
         />
         <BannerAtmosphere light={light} />
         <time className="hero-clock">{time}</time>
@@ -90,8 +94,6 @@ export function ProfileHeader({
           <a
             className="small-button tactile-button"
             href={profile.contactUrl}
-            target="_blank"
-            rel="noreferrer"
           >
             <Icon name="mail" />
             Send an email

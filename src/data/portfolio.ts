@@ -12,7 +12,7 @@ export const profile = {
     "I believe actions speak louder than words, so I put my code where my mouth is.",
   currentProjects: ["Draco", "VengeanceUI"],
   bookingUrl: "https://calendly.com/a-naren1308",
-  contactUrl: "https://www.ashutoshx7.me/contact",
+  contactUrl: "mailto:community.naren1308@gmail.com",
   githubUrl: "https://github.com/ntbnaren7",
   blogUrl: "https://medium.com/@ashutoshx7",
   quote:
@@ -61,24 +61,24 @@ export const projects = [
   {
     name: "VengenceUI",
     status: "Live",
-    pinned: true,
+    directLink: true,
     image: "/images/projects/scribe-ui.png",
     hoverImage: "/images/projects/project-hover-vengenceui.webp",
     description:
       "VengenceUI helps you to build your landing page by providing you animated beautiful components",
     technologies: ["next", "react", "typescript", "tailwind", "motion"],
-    url: "https://vengenceui.com",
+    url: "https://www.usescribe.in/",
   },
   {
     name: "Scribble3D",
     status: "Building",
-    pinned: false,
+    directLink: true,
     image: "/images/projects/invariant-ui.png",
     hoverImage: "/images/projects/project-hover-scribble3d.webp",
     description:
       "Turn your sketches into 3D objects and worlds — no 3D skills required.",
     technologies: ["next", "typescript", "postman", "motion"],
-    url: "https://www.ashutoshx7.me/projects",
+    url: "https://financial-control-engine-fce.vercel.app/",
   },
   {
     name: "Blueprint",

@@ -17,9 +17,9 @@ export function ProjectsSection() {
               className="project-preview"
               aria-label={`Open ${project.name}`}
             >
-              {project.pinned && (
-                <span className="project-pin">
-                  <Icon name="pin" size={15} />
+              {project.directLink && (
+                <span className="project-direct-link" aria-hidden="true">
+                  <Icon name="arrow-up-right" size={16} />
                 </span>
               )}
               <img

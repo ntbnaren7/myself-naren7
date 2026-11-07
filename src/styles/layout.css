@@ -155,10 +155,24 @@
   background: #081b37;
 }
 .hero-banner > img {
+  position: absolute;
+  inset: 0;
   height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center 65%;
+}
+.hero-banner-day {
+  opacity: 0;
+  transition: opacity 520ms ease;
+}
+:root[data-theme="light"] .hero-banner-day {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-banner-day {
+    transition: none;
+  }
 }
 .hero-banner::after {
   content: "";
@@ -230,6 +244,7 @@
   height: 80px;
   border-radius: 5px;
   object-fit: cover;
+  filter: grayscale(1);
 }
 .profile-name {
   padding-top: 32px;
@@ -256,26 +271,37 @@
   gap: 12px;
   padding-top: 12px;
 }
-.command-trigger {
-  padding: 4px 12px;
-  border-radius: 5px;
+.command-trigger.framed-button {
+  min-width: 46px;
+  min-height: 24px;
+  padding: 3px 7px;
+  border-color: var(--border);
+  border-radius: 8px;
   font-family: "Geist Mono", monospace;
   font-size: 11px;
-  line-height: 12px;
+  line-height: 14px;
 }
-.command-trigger::before {
-  inset: -4.5px;
-  border-radius: 9px;
+.command-trigger.framed-button::before {
+  inset: -3px;
+  border-color: var(--soft-border);
+  border-radius: 12px;
 }
 .theme-toggle {
   display: flex;
   padding: 0;
   color: var(--muted);
+  transition: color 0.2s;
 }
 .theme-toggle:hover {
   color: var(--foreground);
 }
+.theme-toggle svg {
+  width: 16px;
+  height: 16px;
+}
 .introduction {
+  position: relative;
+  z-index: 1;
   padding-top: 16px;
   color: var(--body-text);
   font-size: 15px;
