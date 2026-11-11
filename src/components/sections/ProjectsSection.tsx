@@ -1,7 +1,19 @@
 import { projects } from "../../data/portfolio";
 import { Icon } from "../ui/Icon";
 import { SectionHeading } from "../ui/SectionHeading";
-import { ViewAllLink } from "../ui/ViewAllLink";
+
+const technologyLabels: Record<string, string> = {
+  next: "Next.js",
+  typescript: "TypeScript",
+  python: "Python",
+  gemini: "Gemini",
+  tailwind: "Tailwind CSS",
+  fastapi: "FastAPI",
+  postgresql: "PostgreSQL",
+  sqlalchemy: "SQLAlchemy",
+  pydantic: "Pydantic",
+  razorpay: "Razorpay API",
+};
 
 export function ProjectsSection() {
   return (
@@ -53,20 +65,25 @@ export function ProjectsSection() {
               <div className="project-footer">
                 <div className="technology-icons" aria-label="Technologies">
                   {project.technologies.map((technology) => (
-                    <span key={technology} title={technology}>
+                    <span
+                      key={technology}
+                      title={technologyLabels[technology]}
+                      role="img"
+                      aria-label={technologyLabels[technology]}
+                    >
                       <Icon name={technology} />
                     </span>
                   ))}
                 </div>
                 <a href={project.url} target="_blank" rel="noreferrer">
-                  View Project <Icon name="arrow-up-right" size={12} />
+                  {project.linkLabel ?? "View Project"}{" "}
+                  <Icon name="arrow-up-right" size={12} />
                 </a>
               </div>
             </div>
           </article>
         ))}
       </div>
-      <ViewAllLink href="https://www.ashutoshx7.me/projects" />
     </section>
   );
 }

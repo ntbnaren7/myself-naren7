@@ -79,14 +79,16 @@ export function ProfileHeader({
         </div>
       </header>
       <section className="introduction" aria-label="About me">
-        <p>{profile.introduction}</p>
+        <p>
+          <strong>{profile.introductionTitle}</strong> {profile.introduction}
+        </p>
         <ul>
           <li>{profile.interests}</li>
           <li>{profile.philosophy}</li>
           <li>
-            Currently building <strong>{profile.currentProjects[0]}</strong>,{" "}
-            <strong>{profile.currentProjects[1]}</strong>, and experimental AI
-            tools.
+            Building <strong>{profile.currentProjects[0]}</strong>,{" "}
+            <strong>{profile.currentProjects[1]}</strong>, and whatever curiosity
+            leads me to next.
           </li>
         </ul>
         <div className="contact-actions">

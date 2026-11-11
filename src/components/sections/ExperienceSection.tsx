@@ -1,9 +1,10 @@
+import { useState } from "react";
 import { experiences } from "../../data/portfolio";
-import { Icon } from "../ui/Icon";
 import { SectionHeading } from "../ui/SectionHeading";
 // import { ViewAllLink } from "../ui/ViewAllLink";
 
 export function ExperienceSection() {
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   return (
     <section id="experience" className="portfolio-section experience-section">
       <SectionHeading>Experiences</SectionHeading>
@@ -13,11 +14,29 @@ export function ExperienceSection() {
             experience.stats.length > 0 ||
             experience.description.length > 0 ||
             experience.tags.length > 0;
-          const Row = hasDetails ? "details" : "article";
-          const Header = hasDetails ? "summary" : "div";
+          const isExpanded = Boolean(expanded[experience.id]);
+          const Header = hasDetails ? "button" : "div";
           return (
-            <Row key={experience.id} className="experience-row local-divider">
-              <Header className="experience-summary">
+            <article
+              key={experience.id}
+              className="experience-row local-divider"
+              data-expanded={isExpanded}
+            >
+              <Header
+                className="experience-summary"
+                {...(hasDetails
+                  ? {
+                      type: "button" as const,
+                      "aria-expanded": isExpanded,
+                      "aria-controls": `experience-${experience.id}`,
+                      onClick: () =>
+                        setExpanded((current) => ({
+                          ...current,
+                          [experience.id]: !current[experience.id],
+                        })),
+                    }
+                  : {})}
+              >
                 <div className="experience-identity">
                   <span className="company-logo">
                     <img
@@ -51,43 +70,69 @@ export function ExperienceSection() {
                   <span>
                     {experience.date}
                     {hasDetails && (
-                      <Icon
-                        name="chevron-down"
-                        size={13}
+                      <svg
+                        viewBox="0 0 24 24"
+                        width={14}
+                        height={14}
                         className="experience-chevron"
-                      />
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                        aria-hidden="true"
+                      >
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
                     )}
                   </span>
                   <p>{experience.location}</p>
                 </div>
               </Header>
               {hasDetails && (
-                <div className="experience-details">
-                  {experience.stats.length > 0 && (
-                    <div className="experience-stats">
-                      {experience.stats.map((stat) => (
-                        <div key={stat.label}>
-                          <strong>{stat.value}</strong>
-                          <span>{stat.label}</span>
+                <div
+                  id={`experience-${experience.id}`}
+                  className="experience-collapse"
+                  aria-hidden={!isExpanded}
+                  inert={!isExpanded}
+                >
+                  <div className="experience-collapse-inner">
+                    <div className="experience-details">
+                      {experience.stats.length > 0 && (
+                        <div className="experience-stats">
+                          {experience.stats.map((stat) => (
+                            <div key={stat.label}>
+                              <strong>{stat.value}</strong>
+                              <span>{stat.label}</span>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      )}
+                      <ul>
+                        {experience.description.map((line) => (
+                          <li key={line}>
+                            {line
+                              .split("**")
+                              .map((part, index) =>
+                                index % 2 === 1 ? (
+                                  <strong key={index}>{part}</strong>
+                                ) : (
+                                  part
+                                ),
+                              )}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="experience-tags">
+                        {experience.tags.map((tag) => (
+                          <span className="tag" key={tag}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  )}
-                  <ul>
-                    {experience.description.map((line) => (
-                      <li key={line}>{line}</li>
-                    ))}
-                  </ul>
-                  <div className="experience-tags">
-                    {experience.tags.map((tag) => (
-                      <span className="tag" key={tag}>
-                        {tag}
-                      </span>
-                    ))}
                   </div>
                 </div>
               )}
-            </Row>
+            </article>
           );
         })}
       </div>

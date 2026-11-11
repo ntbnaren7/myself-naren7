@@ -5,12 +5,12 @@ export const profile = {
   name: "naren7",
   age: "21",
   avatar: "/images/profiles/goat.svg",
-  introduction:
-    "Engineer / Artist. I love building, breaking, and shipping things.",
-  interests: "AI, open source, and developer tools excite me.",
+  introductionTitle: "Engineer / Dreamer.",
+  introduction: "Just someone who loves creating things.",
+  interests: "Obsessed with AI, products, and possibilities.",
   philosophy:
-    "I believe actions speak louder than words, so I put my code where my mouth is.",
-  currentProjects: ["Draco", "VengeanceUI"],
+    "I think beyond code - combining tech, design, and business to bring ideas to life.",
+  currentProjects: ["ECHO", "Scribe"],
   bookingUrl: "https://calendly.com/a-naren1308",
   contactUrl: "mailto:community.naren1308@gmail.com",
   githubUrl: "https://github.com/ntbnaren7",
@@ -38,9 +38,25 @@ export const experiences: typeof reference.experiences = [
     date: "Jun 2026 - Aug 2026",
     location: "Remote · Chennai",
     image: "/images/experience/hyle-global.png",
-    stats: [],
-    description: [],
-    tags: [],
+    stats: [
+      { value: "Tech Lead", label: "Engineering role" },
+      { value: "Cognis", label: "Product led" },
+      { value: "Aug-Oct '26", label: "Term" },
+      { value: "0 → 1", label: "Product engineering" },
+    ],
+    description: [
+      "Led the engineering of **Cognis** at Hyle Global, taking ownership of its technical direction, architecture, and core development.",
+      "Architected the foundational systems powering an AI-native browser experience, translating ambitious product ideas into executable engineering.",
+      "Engineered type-safe, event-driven infrastructure to coordinate complex interactions across browser environments.",
+      "Drove the development of real-time contextual intelligence, tackling the challenges of latency, relevance, and seamless user interaction.",
+      "Shaped Cognis from an engineering and product perspective, making critical trade-offs across technical feasibility, user experience, and long-term scalability.",
+    ],
+    tags: [
+      "AI Systems",
+      "Event-Driven Architecture",
+      "Intent Modeling",
+      "AI Co-pilot",
+    ],
   },
   {
     id: "dci",
@@ -49,9 +65,20 @@ export const experiences: typeof reference.experiences = [
     date: "Jan 2026 - Jun 2026",
     location: "Hybrid · Madurai",
     image: "/images/experience/dci.png",
-    stats: [],
-    description: [],
-    tags: [],
+    stats: [
+      { value: "DIYA", label: "AI product" },
+      { value: "15-20h", label: "Weekly time saved*" },
+      { value: "Jan - Jun 2026", label: "Term" },
+      { value: "End-to-End", label: "AI workflows" },
+    ],
+    description: [
+      "Engineered **DIYA**, an AI-powered marketing system that transforms a brand's website into structured intelligence and actionable content strategies.",
+      "Built a URL-to-brand intelligence pipeline, extracting visual identity, brand context, and positioning from unstructured web content.",
+      "Orchestrated multi-stage LLM workflows, connecting brand analysis, strategic reasoning, and content generation into a cohesive system.",
+      "Tackled the challenge of maintaining brand consistency across AI-generated outputs, grounding creative decisions in extracted brand information.",
+      "Automated repetitive research and campaign-planning workflows, reducing an estimated **15-20 hours of manual work per week**.",
+    ],
+    tags: ["AI Content Automation", "Content Strategy", "Workflow Automation"],
   },
   // ...reference.experiences, // Previous sample entries retained for later.
 ];
@@ -59,27 +86,36 @@ export { socials } from "./socials";
 
 export const projects = [
   {
-    name: "VengenceUI",
-    status: "Live",
+    name: "Scribe",
+    status: "Building",
     directLink: true,
+    linkLabel: "Visit Scribe",
     image: "/images/projects/scribe-ui.png",
     hoverImage: "/images/projects/project-hover-vengenceui.webp",
     description:
-      "VengenceUI helps you to build your landing page by providing you animated beautiful components",
-    technologies: ["next", "react", "typescript", "tailwind", "motion"],
+      "An AI-powered creative engine that turns brand websites into intelligent, ready-to-publish marketing campaigns.",
+    technologies: ["next", "typescript", "python", "gemini", "tailwind"],
     url: "https://www.usescribe.in/",
   },
   {
-    name: "Scribble3D",
-    status: "Building",
+    name: "Invariant",
+    status: "Live",
     directLink: true,
     image: "/images/projects/invariant-ui.png",
     hoverImage: "/images/projects/project-hover-scribble3d.webp",
     description:
-      "Turn your sketches into 3D objects and worlds — no 3D skills required.",
-    technologies: ["next", "typescript", "postman", "motion"],
+      "An open-source financial intelligence engine that detects payment discrepancies, reconciles transactions, and automates recovery workflows.",
+    technologies: [
+      "python",
+      "fastapi",
+      "postgresql",
+      "sqlalchemy",
+      "pydantic",
+      "razorpay",
+    ],
     url: "https://financial-control-engine-fce.vercel.app/",
   },
+  /* Additional sample projects retained for later.
   {
     name: "Blueprint",
     status: "Building",
@@ -110,6 +146,7 @@ export const projects = [
     technologies: ["next", "typescript", "node", "zustand"],
     url: "https://www.ashutoshx7.me/projects",
   },
+  */
 ];
 
 // Captured from the supplied reference. The layout needs no API or backend.
