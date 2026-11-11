@@ -27,7 +27,7 @@ export function ProjectsSection() {
               target="_blank"
               rel="noreferrer"
               className="project-preview"
-              aria-label={`Open ${project.name}`}
+              aria-label={project.hoverLabel ?? `Open ${project.name}`}
             >
               {project.directLink && (
                 <span className="project-direct-link" aria-hidden="true">
@@ -48,7 +48,8 @@ export function ProjectsSection() {
                 />
               </div>
               <span className="project-hover-label">
-                Explore project <Icon name="arrow-up-right" />
+                {project.hoverLabel ?? "Explore project"}{" "}
+                <Icon name="arrow-up-right" />
               </span>
             </a>
             <div className="project-copy">
@@ -76,7 +77,7 @@ export function ProjectsSection() {
                   ))}
                 </div>
                 <a href={project.url} target="_blank" rel="noreferrer">
-                  {project.linkLabel ?? "View Project"}{" "}
+                  {project.linkLabel ?? project.hoverLabel ?? "View Project"}{" "}
                   <Icon name="arrow-up-right" size={12} />
                 </a>
               </div>

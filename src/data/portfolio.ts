@@ -91,7 +91,7 @@ export const projects = [
     directLink: true,
     linkLabel: "Visit Scribe",
     image: "/images/projects/scribe-ui.png",
-    hoverImage: "/images/projects/project-hover-vengenceui.webp",
+    hoverImage: "/images/projects/project-hover-scribe.webp",
     description:
       "An AI-powered creative engine that turns brand websites into intelligent, ready-to-publish marketing campaigns.",
     technologies: ["next", "typescript", "python", "gemini", "tailwind"],
@@ -102,7 +102,7 @@ export const projects = [
     status: "Live",
     directLink: true,
     image: "/images/projects/invariant-ui.png",
-    hoverImage: "/images/projects/project-hover-scribble3d.webp",
+    hoverImage: "/images/projects/project-hover-invariant.webp",
     description:
       "An open-source financial intelligence engine that detects payment discrepancies, reconciles transactions, and automates recovery workflows.",
     technologies: [
@@ -114,6 +114,18 @@ export const projects = [
       "razorpay",
     ],
     url: "https://financial-control-engine-fce.vercel.app/",
+  },
+  {
+    name: "ECHO",
+    status: "Building",
+    directLink: true,
+    hoverLabel: "Join the first listeners",
+    image: "/images/projects/echo-ui.png",
+    hoverImage: "/images/projects/project-hover-echo.webp",
+    description:
+      "A hearing intelligence product that helps people understand, experience, and care for their hearing.",
+    technologies: [],
+    url: "https://withecho.in/",
   },
   /* Additional sample projects retained for later.
   {
